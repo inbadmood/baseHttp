@@ -1,0 +1,99 @@
+server:
+  connTimeoutSec: 1800
+  messageDecode: false
+  CTRKey: platformKeyg
+  demoMode: true
+  port: 55688
+
+#mysql
+mysql:
+  idleConns: 10
+  openConns: 100
+  platform:
+    master:
+      dbName: platform
+      host: localhost
+      port: 3306
+      user: root
+      password: 1qaz2wsx
+    slave:
+      dbName: platform
+      host: localhost
+      port: 3306
+      user: root
+      password: 1qaz2wsx
+  report:
+    master:
+      dbName: report
+      host: localhost
+      port: 3306
+      user: root
+      password: 1qaz2wsx
+    slave:
+      dbName: report
+      host: localhost
+      port: 3306
+      user: root
+      password: 1qaz2wsx
+  wagers:
+    master:
+      dbName: wagers
+      host: localhost
+      port: 3306
+      user: root
+      password: 1qaz2wsx
+    slave:
+      dbName: wagers
+      host: localhost
+      port: 3306
+      user: root
+      password: 1qaz2wsx
+#redis
+redis:
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+  WriteTimeout: 20000
+  minIdle: 100
+  maxActive: 200
+  subscribeIdle: 20
+  subscribeActive: 200
+  cronIdle: 20
+  cronActive: 200
+  wallet:
+    master:
+      host: localhost
+      port: 6379
+      index: 4
+      IdleTimeout: 10
+      authPassword : true
+      password: 1qaz2wsx
+  wagers:
+    master:
+      host: localhost
+      port: 6379
+      index: 3
+      IdleTimeout: 10
+      authPassword: true
+      password: 1qaz2wsx
+  player:
+    master:
+      host: localhost
+      port: 6379
+      index: 5
+      IdleTimeout: 10
+      authPassword: true
+      password: 1qaz2wsx
+  publish:
+    master:
+      host: localhost
+      port: 6379
+      index: 6
+      IdleTimeout: 10
+      authPassword : true
+      password: 1qaz2wsx
+#telegram-api
+telegram-api:
+  notifyOpen: false
+  apiURL: https://api.telegram.org/bot%s/%s
+  chatID: -1111111
+  robotToken: lol
