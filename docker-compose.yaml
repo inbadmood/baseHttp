@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: go_clean_arch_mysql
+    command: mysqld --user=root
+    volumes:
+      - ./mysql.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=example
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
+  redis:
+    image: redis:6.0.6
+    container_name: go_clean_arch_redis
+    restart: always
+    ports:
+      - 6379:6379

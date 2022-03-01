@@ -1,0 +1,15 @@
+ENV: local
+Port: 8089
+ConnectionStrings:
+  Mysql:
+    Host: 127.0.0.1
+    DataBase: example
+    User: user
+    Password: password
+    Port: 3306
+  Redis:
+    Host: 127.0.0.1:6379
+    Database: 1
+API:
+  URL: example.api
+  Token: testToken
